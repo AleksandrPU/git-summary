@@ -297,6 +297,12 @@ Git сообщит об этом с помощью статуса **modified**: 
 
 ### Типичный жизненный цикл файла в Git
 
+```mermaid
+graph LR
+    untracked -- "git add" --> staged;
+    staged -- "???" --> tracked/comitted;
+```
+
 1. Файл только что создали. Git про него ещё ничего не знает. Состояние: **untracked**.
 2. Файл добавили в **staging area** с помощью ```git add```. Состояние: **staged** (+ **tracked**).
 * Возможно, изменили файл ещё раз. Состояния: **staged**, **modified** (+ **tracked**).
